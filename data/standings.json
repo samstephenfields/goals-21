@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22T13:21:04+00:00",
+  "generated": "2026-09-22T13:25:16+00:00",
   "season": "2026/27",
   "title": "Race to 21",
   "rules": "Pick four players whose total goals in the 2026-27 Premier League season add up to 21. Any four players, from any team — including four from the same team.",
@@ -12,13 +12,13 @@
       "name": "Alexi",
       "players": [
         {
-          "id": 106,
-          "name": "Igor Thiago",
-          "team": "Brentford",
-          "teamShort": "BRE",
-          "position": "FWD",
-          "goals": 1,
-          "minutes": 442,
+          "id": 40,
+          "name": "Morgan Rogers",
+          "team": "Chelsea",
+          "teamShort": "CHE",
+          "position": "MID",
+          "goals": 3,
+          "minutes": 437,
           "active": true
         },
         {
@@ -32,13 +32,13 @@
           "active": true
         },
         {
-          "id": 40,
-          "name": "Morgan Rogers",
-          "team": "Chelsea",
-          "teamShort": "CHE",
-          "position": "MID",
-          "goals": 3,
-          "minutes": 437,
+          "id": 106,
+          "name": "Igor Thiago",
+          "team": "Brentford",
+          "teamShort": "BRE",
+          "position": "FWD",
+          "goals": 1,
+          "minutes": 442,
           "active": true
         },
         {
@@ -54,11 +54,22 @@
       ],
       "total": 6,
       "remaining": 15,
+      "bust": false,
       "rank": 1
     },
     {
       "name": "Keone",
       "players": [
+        {
+          "id": 346,
+          "name": "Dominic Calvert-Lewin",
+          "team": "Leeds",
+          "teamShort": "LEE",
+          "position": "FWD",
+          "goals": 2,
+          "minutes": 419,
+          "active": true
+        },
         {
           "id": 368,
           "name": "Dominik Szoboszlai",
@@ -67,16 +78,6 @@
           "position": "MID",
           "goals": 1,
           "minutes": 440,
-          "active": true
-        },
-        {
-          "id": 208,
-          "name": "Ismaila Sarr",
-          "team": "Crystal Palace",
-          "teamShort": "CRY",
-          "position": "MID",
-          "goals": 0,
-          "minutes": 8,
           "active": true
         },
         {
@@ -90,23 +91,44 @@
           "active": true
         },
         {
-          "id": 346,
-          "name": "Dominic Calvert-Lewin",
-          "team": "Leeds",
-          "teamShort": "LEE",
-          "position": "FWD",
-          "goals": 2,
-          "minutes": 419,
+          "id": 208,
+          "name": "Ismaila Sarr",
+          "team": "Crystal Palace",
+          "teamShort": "CRY",
+          "position": "MID",
+          "goals": 0,
+          "minutes": 8,
           "active": true
         }
       ],
       "total": 4,
       "remaining": 17,
+      "bust": false,
       "rank": 2
     },
     {
       "name": "Max",
       "players": [
+        {
+          "id": 26,
+          "name": "Kai Havertz",
+          "team": "Arsenal",
+          "teamShort": "ARS",
+          "position": "FWD",
+          "goals": 2,
+          "minutes": 437,
+          "active": true
+        },
+        {
+          "id": 368,
+          "name": "Dominik Szoboszlai",
+          "team": "Liverpool",
+          "teamShort": "LIV",
+          "position": "MID",
+          "goals": 1,
+          "minutes": 440,
+          "active": true
+        },
         {
           "id": 356,
           "name": "Virgil van Dijk",
@@ -126,55 +148,16 @@
           "goals": 0,
           "minutes": 450,
           "active": true
-        },
-        {
-          "id": 26,
-          "name": "Kai Havertz",
-          "team": "Arsenal",
-          "teamShort": "ARS",
-          "position": "FWD",
-          "goals": 2,
-          "minutes": 437,
-          "active": true
-        },
-        {
-          "id": 368,
-          "name": "Dominik Szoboszlai",
-          "team": "Liverpool",
-          "teamShort": "LIV",
-          "position": "MID",
-          "goals": 1,
-          "minutes": 440,
-          "active": true
         }
       ],
       "total": 3,
       "remaining": 18,
+      "bust": false,
       "rank": 3
     },
     {
       "name": "Yuseph",
       "players": [
-        {
-          "id": 366,
-          "name": "Florian Wirtz",
-          "team": "Liverpool",
-          "teamShort": "LIV",
-          "position": "MID",
-          "goals": 0,
-          "minutes": 402,
-          "active": true
-        },
-        {
-          "id": 8,
-          "name": "Riccardo Calafiori",
-          "team": "Arsenal",
-          "teamShort": "ARS",
-          "position": "DEF",
-          "goals": 0,
-          "minutes": 416,
-          "active": true
-        },
         {
           "id": 155,
           "name": "Enzo Fernández",
@@ -194,15 +177,46 @@
           "goals": 1,
           "minutes": 450,
           "active": true
+        },
+        {
+          "id": 366,
+          "name": "Florian Wirtz",
+          "team": "Liverpool",
+          "teamShort": "LIV",
+          "position": "MID",
+          "goals": 0,
+          "minutes": 402,
+          "active": true
+        },
+        {
+          "id": 8,
+          "name": "Riccardo Calafiori",
+          "team": "Arsenal",
+          "teamShort": "ARS",
+          "position": "DEF",
+          "goals": 0,
+          "minutes": 416,
+          "active": true
         }
       ],
       "total": 2,
       "remaining": 19,
+      "bust": false,
       "rank": 4
     },
     {
       "name": "Sam",
       "players": [
+        {
+          "id": 391,
+          "name": "Joško Gvardiol",
+          "team": "Man City",
+          "teamShort": "MCI",
+          "position": "DEF",
+          "goals": 1,
+          "minutes": 434,
+          "active": true
+        },
         {
           "id": 79,
           "name": "Evanilson",
@@ -224,16 +238,6 @@
           "active": true
         },
         {
-          "id": 391,
-          "name": "Joško Gvardiol",
-          "team": "Man City",
-          "teamShort": "MCI",
-          "position": "DEF",
-          "goals": 1,
-          "minutes": 434,
-          "active": true
-        },
-        {
           "id": 75,
           "name": "Ryan Christie",
           "team": "Bournemouth",
@@ -246,6 +250,7 @@
       ],
       "total": 1,
       "remaining": 20,
+      "bust": false,
       "rank": 5
     },
     {
@@ -294,6 +299,7 @@
       ],
       "total": 1,
       "remaining": 20,
+      "bust": false,
       "rank": 6
     },
     {
@@ -342,6 +348,7 @@
       ],
       "total": 0,
       "remaining": 21,
+      "bust": false,
       "rank": 7
     }
   ]

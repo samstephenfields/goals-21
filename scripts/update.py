@@ -81,11 +81,13 @@ def main():
                     "active": False,
                 })
         total = sum(p["goals"] for p in players)
+        players.sort(key=lambda p: -p["goals"])
         people.append({
             "name": person["name"],
             "players": players,
             "total": total,
             "remaining": picks["target"] - total,
+            "bust": total > picks["target"],
         })
 
     # Closest to the target first; if level, fewer goals leads (still climbing).
