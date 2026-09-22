@@ -7,8 +7,9 @@ the aim is for their combined 2026/27 league goals to total exactly **21**.
 
 ## How it works
 
-- `data/picks.json` — who picked whom. Players are pinned by their Premier
-  League player id, so the tally survives a name spelling change or a transfer.
+- `data/picks.json` — who picked whom, plus which club each person supports.
+  Players are pinned by their Premier League player id, so the tally survives a
+  name spelling change or a transfer.
 - `scripts/update.py` — pulls the official Premier League player feed and writes
   `data/standings.json`.
 - `index.html` — reads that file and draws the cards.
@@ -16,6 +17,14 @@ the aim is for their combined 2026/27 league goals to total exactly **21**.
   and commits the result, which republishes the page.
 
 Only Premier League goals count. Own goals are excluded.
+
+## Club crests
+
+Each card is themed to the club its owner supports — a banner gradient in the
+club's colours and a watermark motif. The motifs are original drawings nodding to
+each club's nickname (a cannon, a liver bird, a trident, cherries, a lion) rather
+than the clubs' actual badges, which are trademarked. They live in the `CRESTS`
+object in `index.html`; colours are in the `clubs` block of `data/picks.json`.
 
 ## Running it by hand
 

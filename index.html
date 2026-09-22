@@ -59,19 +59,33 @@
   }
   .card:hover{transform:translateY(-2px);border-color:#2f3d52}
   .card.lead{border-color:rgba(255,201,60,.4)}
-  .card.lead::before{
-    content:"";position:absolute;inset:0 0 auto;height:2px;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  }
   .card.done{border-color:rgba(47,224,138,.55)}
+  .card::before{
+    content:"";position:absolute;inset:0 0 auto;height:3px;z-index:2;
+    background:linear-gradient(90deg,var(--c1),var(--c2));
+  }
+  .card::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(120% 90% at 100% 0,var(--ink),transparent 58%);
+    opacity:.07;
+  }
+  .card>*{position:relative;z-index:1}
+  .card>.crest{
+    position:absolute;top:-10px;right:-14px;width:104px;height:104px;
+    fill:var(--ink);opacity:.085;pointer-events:none;z-index:0;
+  }
+  .club{
+    display:flex;align-items:center;gap:5px;margin-top:3px;
+    font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);
+  }
+  .club svg{width:13px;height:13px;fill:var(--ink);flex:none;opacity:.95}
   .card.bust{
     border-color:rgba(255,77,106,.45);
     background:linear-gradient(180deg,#1d1418,var(--bg2));
   }
-  .card.bust::before{
-    content:"";position:absolute;inset:0 0 auto;height:2px;
-    background:linear-gradient(90deg,transparent,var(--bust),transparent);
-  }
+  .card.bust::before{background:linear-gradient(90deg,var(--bust2),var(--bust))}
+  .card.bust::after{background:radial-gradient(120% 90% at 100% 0,var(--bust),transparent 58%);opacity:.1}
+  .card.bust .crest{fill:var(--bust)}
   .card.bust .rank{background:rgba(255,77,106,.14);color:#ff8fa3;border-color:rgba(255,77,106,.3)}
   .card.bust .tot b{color:#ff8fa3}
   .card.bust .bar i{background:linear-gradient(90deg,var(--bust2),var(--bust))}
@@ -91,7 +105,8 @@
     font-size:12px;font-weight:800;background:var(--card2);color:var(--dim);border:1px solid var(--line);
   }
   .lead .rank{background:linear-gradient(140deg,#ffc93c,#ff9d2e);color:#3d2600;border-color:transparent}
-  .who{font-size:19px;font-weight:700;letter-spacing:-.01em;flex:1;min-width:0}
+  .who{flex:1;min-width:0}
+  .who .nom{font-size:19px;font-weight:700;letter-spacing:-.01em;display:block}
   .tot{text-align:right;line-height:1}
   .tot b{font-size:31px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
   .tot span{display:block;font-size:10px;color:var(--faint);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
@@ -127,7 +142,8 @@
   .out{font-size:9px;color:var(--warn);border:1px solid rgba(255,138,92,.3);border-radius:4px;padding:2px 4px;margin-left:6px}
 
   footer{margin-top:40px;text-align:center;color:var(--faint);font-size:12px;line-height:1.9}
-  footer a{color:var(--dim)}
+  footer a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(47,224,138,.3)}
+  footer a:hover{border-bottom-color:var(--accent)}
   .state{text-align:center;padding:70px 20px;color:var(--dim)}
   @media (max-width:560px){
     .wrap{padding:26px 14px 52px}
@@ -137,7 +153,7 @@
     .chip{padding:5px 10px}
     .grid{gap:13px;grid-template-columns:1fr}
     .card{padding:15px 14px;border-radius:14px}
-    .who{font-size:18px}
+    .who .nom{font-size:18px}
     .tot b{font-size:28px}
     li{padding:11px 10px}
     .nm{font-size:15px}
@@ -157,15 +173,19 @@
   </header>
   <main id="app"><div class="state">Loading the latest goals…</div></main>
   <footer>
-    Goals from the official Premier League player data feed · own goals not counted<br>
+    Goals from the official <a id="feed" href="https://fantasy.premierleague.com/api/bootstrap-static/" target="_blank" rel="noopener">Premier League data feed</a> · own goals not counted<br>
+    Browse the <a href="https://www.premierleague.com/stats/top/players/goals" target="_blank" rel="noopener">full Premier League scorer list</a><br>
     Updates automatically every Sunday at 8pm UK time
   </footer>
 </div>
 <script>
+const CRESTS = {"cannon": "<path d=\"M2.6 7.6h14.2v5.6H2.6z\"/><path d=\"M16.4 6.4h2.9a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2.9z\"/><path d=\"M2.6 12.2h6.2l-4.4 8.4H.8z\"/><path fill-rule=\"evenodd\" d=\"M9.9 12.6a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4zm0 3.1a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z\"/>", "bird": "<path d=\"M1.4 15.3c2.6-2.4 5.6-3.3 9-2.7l5.8-3.2c1.3-.7 2.5.6 1.8 1.8l-2 3.3c-1.9 3.2-5.6 4.8-9.6 4.1z\"/><path d=\"M10.4 12.6C8.7 8.4 9.2 4.7 11.9 1.6c1.1 3.9.7 7.4-1.2 10.6z\"/><path d=\"M8.2 18.4c.5 2.4 1.9 4 4.2 4.9-.3-2.2-1.1-3.9-2.4-5.2z\"/><path d=\"M17.6 9.2 22.4 7l-3.6 4z\"/><circle cx=\"16.4\" cy=\"10.4\" r=\"0.85\"/>", "trident": "<path d=\"M11 1.6h2v20.8h-2z\"/><path d=\"M4.6 4.6h2v5.1c0 2.1 1.9 3.4 5.4 3.6v2C7 15.1 4.6 13 4.6 9.7z\"/><path d=\"M19.4 4.6h-2v5.1c0 2.1-1.9 3.4-5.4 3.6v2c5 -.2 7.4-2.3 7.4-5.6z\"/><path d=\"M8.6 20.1h6.8v1.9H8.6z\"/>", "cherries": "<circle cx=\"7.6\" cy=\"17.4\" r=\"4.3\"/><circle cx=\"16.8\" cy=\"18.4\" r=\"3.6\"/><path d=\"M7.1 13.2C7.6 8.4 10 4.6 14.4 2.3l.9 1.7c-3.7 2-5.7 5.2-6.2 9.4z\" /><path d=\"M16.4 14.9c-.9-4-.4-7.4 1.4-10.3l1.7 1c-1.5 2.4-1.9 5.2-1.1 8.7z\"/><path d=\"M14.6 2.1c2.4-.7 4.4-.2 6 1.5-1.9 1.3-3.9 1.5-6 .6z\"/>", "lion": "<path fill-rule=\"evenodd\" d=\"M12.00 -0.20 L14.80 4.29 L19.84 2.65 L19.10 7.90 L24.01 9.88 L20.08 13.42 L22.57 18.10 L17.27 18.28 L16.17 23.46 L12.00 20.20 L7.83 23.46 L6.73 18.28 L1.43 18.10 L3.92 13.42 L-0.01 9.88 L4.90 7.90 L4.16 2.65 L9.20 4.29 Z M18.9 12a6.9 6.9 0 1 0-13.8 0 6.9 6.9 0 1 0 13.8 0 Z\"/><path d=\"M7.4 6.9a2.4 2.4 0 0 1 2.6 1.5 6.6 6.6 0 0 0-2.9 1.7zM16.6 6.9a2.4 2.4 0 0 0-2.6 1.5 6.6 6.6 0 0 1 2.9 1.7z\"/><path d=\"M8.1 10.1l3.1 1.2-.5 1.5-3.2-1.4zM15.9 10.1l-3.1 1.2.5 1.5 3.2-1.4z\"/><path d=\"M12 13.2l1.8 1.4a1.8 1.8 0 0 1-3.6 0z\"/><path d=\"M9.6 16.1a2.1 2.1 0 0 0 2.4 1.4 2.1 2.1 0 0 0 2.4-1.4 2.6 2.6 0 0 1-4.8 0z\"/>"};
+
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 function render(d) {
   document.getElementById('season').textContent = d.season;
+  if (d.sourceUrl) document.getElementById('feed').href = d.sourceUrl;
 
   const when = new Date(d.generated).toLocaleString('en-GB', {
     day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London'
@@ -189,6 +209,10 @@ function render(d) {
                : hit ? 'On the number 🎯'
                : `<b>${p.remaining}</b> to go`;
 
+    const club  = (d.clubs || {})[p.club] || {};
+    const crest = CRESTS[club.crest] || '';
+    const svg   = c => `<svg viewBox="0 0 24 24" class="${c}" aria-hidden="true">${crest}</svg>`;
+
     const rows = p.players.map(pl => `
       <li class="${pl.goals > 0 ? 'scored' : ''}">
         <span class="pos">${esc(pl.position)}</span>
@@ -197,10 +221,15 @@ function render(d) {
         <span class="g">${pl.goals}</span>
       </li>`).join('');
 
-    return `<article class="card ${lead ? 'lead' : ''} ${hit ? 'done' : ''} ${bust ? 'bust' : ''}">
+    return `<article class="card ${lead ? 'lead' : ''} ${hit ? 'done' : ''} ${bust ? 'bust' : ''}"
+      style="--c1:${club.c1 || '#2f3d52'};--c2:${club.c2 || '#2f3d52'};--ink:${club.ink || '#8a97ab'}">
+      ${crest ? svg('crest') : ''}
       <div class="top">
         <span class="rank">${p.rank}</span>
-        <span class="who">${esc(p.name)}${bust ? `<span class="badge">${BURST}BUST</span>` : ''}</span>
+        <span class="who">
+          <span class="nom">${esc(p.name)}${bust ? `<span class="badge">${BURST}BUST</span>` : ''}</span>
+          ${club.name ? `<span class="club">${svg('')}${esc(club.name)}</span>` : ''}
+        </span>
         <span class="tot"><b>${p.total}</b><span>goals</span></span>
       </div>
       <div class="bar"><i style="width:${pct}%"></i></div>

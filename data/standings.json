@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22T13:25:16+00:00",
+  "generated": "2026-09-22T13:37:04+00:00",
   "season": "2026/27",
   "title": "Race to 21",
   "rules": "Pick four players whose total goals in the 2026-27 Premier League season add up to 21. Any four players, from any team — including four from the same team.",
@@ -7,9 +7,55 @@
   "gameweek": 5,
   "gameweeksPlayed": 5,
   "source": "Premier League Fantasy API",
+  "sourceUrl": "https://fantasy.premierleague.com/api/bootstrap-static/",
+  "clubs": {
+    "arsenal": {
+      "name": "Arsenal",
+      "nick": "The Gunners",
+      "c1": "#EF0107",
+      "c2": "#DB9E00",
+      "crest": "cannon",
+      "ink": "#FF3A3F"
+    },
+    "liverpool": {
+      "name": "Liverpool",
+      "nick": "The Reds",
+      "c1": "#C8102E",
+      "c2": "#00B2A9",
+      "crest": "bird",
+      "ink": "#F01E3C"
+    },
+    "manutd": {
+      "name": "Man United",
+      "nick": "Red Devils",
+      "c1": "#DA291C",
+      "c2": "#FBE122",
+      "crest": "trident",
+      "ink": "#F5462F"
+    },
+    "bournemouth": {
+      "name": "Bournemouth",
+      "nick": "The Cherries",
+      "c1": "#C8102E",
+      "c2": "#3d3d3d",
+      "crest": "cherries",
+      "ink": "#F01E3C"
+    },
+    "chelsea": {
+      "name": "Chelsea",
+      "nick": "The Blues",
+      "c1": "#034694",
+      "c2": "#4DA3FF",
+      "crest": "lion",
+      "ink": "#4DA3FF"
+    }
+  },
   "people": [
     {
       "name": "Alexi",
+      "club": "arsenal",
+      "clubName": "Arsenal",
+      "clubNick": "The Gunners",
       "players": [
         {
           "id": 40,
@@ -59,6 +105,9 @@
     },
     {
       "name": "Keone",
+      "club": "liverpool",
+      "clubName": "Liverpool",
+      "clubNick": "The Reds",
       "players": [
         {
           "id": 346,
@@ -108,6 +157,9 @@
     },
     {
       "name": "Max",
+      "club": "liverpool",
+      "clubName": "Liverpool",
+      "clubNick": "The Reds",
       "players": [
         {
           "id": 26,
@@ -157,6 +209,9 @@
     },
     {
       "name": "Yuseph",
+      "club": "manutd",
+      "clubName": "Man United",
+      "clubNick": "Red Devils",
       "players": [
         {
           "id": 155,
@@ -206,6 +261,9 @@
     },
     {
       "name": "Sam",
+      "club": "bournemouth",
+      "clubName": "Bournemouth",
+      "clubNick": "The Cherries",
       "players": [
         {
           "id": 391,
@@ -255,6 +313,9 @@
     },
     {
       "name": "Yunus",
+      "club": "chelsea",
+      "clubName": "Chelsea",
+      "clubNick": "The Blues",
       "players": [
         {
           "id": 480,
@@ -304,6 +365,9 @@
     },
     {
       "name": "Jack",
+      "club": "arsenal",
+      "clubName": "Arsenal",
+      "clubNick": "The Gunners",
       "players": [
         {
           "id": 4,

@@ -82,8 +82,12 @@ def main():
                 })
         total = sum(p["goals"] for p in players)
         players.sort(key=lambda p: -p["goals"])
+        club = picks["clubs"].get(person.get("club"), {})
         people.append({
             "name": person["name"],
+            "club": person.get("club"),
+            "clubName": club.get("name"),
+            "clubNick": club.get("nick"),
             "players": players,
             "total": total,
             "remaining": picks["target"] - total,
@@ -104,6 +108,8 @@ def main():
         "gameweek": current["id"] if current else played,
         "gameweeksPlayed": played,
         "source": "Premier League Fantasy API",
+        "sourceUrl": API,
+        "clubs": picks["clubs"],
         "people": people,
     }
     with open(OUT, "w") as f:

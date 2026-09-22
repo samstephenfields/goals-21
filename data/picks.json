@@ -4,25 +4,141 @@
   "target": 21,
   "season": "2026/27",
   "people": [
-    { "name": "Alexi",  "picks": [106, 26, 40, 356] },
-    { "name": "Jack",   "picks": [4, 13, 418, 400] },
-    { "name": "Sam",    "picks": [79, 17, 391, 75] },
-    { "name": "Keone",  "picks": [368, 208, 569, 346] },
-    { "name": "Yuseph", "picks": [366, 8, 155, 388] },
-    { "name": "Yunus",  "picks": [480, 387, 356, 4] },
-    { "name": "Max",    "picks": [356, 4, 26, 368] }
+    {
+      "name": "Alexi",
+      "picks": [
+        106,
+        26,
+        40,
+        356
+      ],
+      "club": "arsenal"
+    },
+    {
+      "name": "Jack",
+      "picks": [
+        4,
+        13,
+        418,
+        400
+      ],
+      "club": "arsenal"
+    },
+    {
+      "name": "Sam",
+      "picks": [
+        79,
+        17,
+        391,
+        75
+      ],
+      "club": "bournemouth"
+    },
+    {
+      "name": "Keone",
+      "picks": [
+        368,
+        208,
+        569,
+        346
+      ],
+      "club": "liverpool"
+    },
+    {
+      "name": "Yuseph",
+      "picks": [
+        366,
+        8,
+        155,
+        388
+      ],
+      "club": "manutd"
+    },
+    {
+      "name": "Yunus",
+      "picks": [
+        480,
+        387,
+        356,
+        4
+      ],
+      "club": "chelsea"
+    },
+    {
+      "name": "Max",
+      "picks": [
+        356,
+        4,
+        26,
+        368
+      ],
+      "club": "liverpool"
+    }
   ],
   "labels": {
-    "106": "Igor Thiago",          "26":  "Kai Havertz",
-    "40":  "Morgan Rogers",        "356": "Virgil van Dijk",
-    "4":   "Gabriel",              "13":  "Declan Rice",
-    "418": "Harry Maguire",        "400": "Jeremy Doku",
-    "79":  "Evanilson",            "17":  "Mikel Merino",
-    "391": "Joško Gvardiol",       "75":  "Ryan Christie",
-    "368": "Dominik Szoboszlai",   "208": "Ismaila Sarr",
-    "569": "Gonzalo García",       "346": "Dominic Calvert-Lewin",
-    "366": "Florian Wirtz",        "8":   "Riccardo Calafiori",
-    "155": "Enzo Fernández",       "388": "Marc Guéhi",
-    "480": "Morgan Gibbs-White",   "387": "Nico O'Reilly"
+    "106": "Igor Thiago",
+    "26": "Kai Havertz",
+    "40": "Morgan Rogers",
+    "356": "Virgil van Dijk",
+    "4": "Gabriel",
+    "13": "Declan Rice",
+    "418": "Harry Maguire",
+    "400": "Jeremy Doku",
+    "79": "Evanilson",
+    "17": "Mikel Merino",
+    "391": "Joško Gvardiol",
+    "75": "Ryan Christie",
+    "368": "Dominik Szoboszlai",
+    "208": "Ismaila Sarr",
+    "569": "Gonzalo García",
+    "346": "Dominic Calvert-Lewin",
+    "366": "Florian Wirtz",
+    "8": "Riccardo Calafiori",
+    "155": "Enzo Fernández",
+    "388": "Marc Guéhi",
+    "480": "Morgan Gibbs-White",
+    "387": "Nico O'Reilly"
+  },
+  "clubs": {
+    "arsenal": {
+      "name": "Arsenal",
+      "nick": "The Gunners",
+      "c1": "#EF0107",
+      "c2": "#DB9E00",
+      "crest": "cannon",
+      "ink": "#FF3A3F"
+    },
+    "liverpool": {
+      "name": "Liverpool",
+      "nick": "The Reds",
+      "c1": "#C8102E",
+      "c2": "#00B2A9",
+      "crest": "bird",
+      "ink": "#F01E3C"
+    },
+    "manutd": {
+      "name": "Man United",
+      "nick": "Red Devils",
+      "c1": "#DA291C",
+      "c2": "#FBE122",
+      "crest": "trident",
+      "ink": "#F5462F"
+    },
+    "bournemouth": {
+      "name": "Bournemouth",
+      "nick": "The Cherries",
+      "c1": "#C8102E",
+      "c2": "#3d3d3d",
+      "crest": "cherries",
+      "ink": "#F01E3C"
+    },
+    "chelsea": {
+      "name": "Chelsea",
+      "nick": "The Blues",
+      "c1": "#034694",
+      "c2": "#4DA3FF",
+      "crest": "lion",
+      "ink": "#4DA3FF"
+    }
   }
 }
