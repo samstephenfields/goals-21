@@ -1,0 +1,52 @@
+name: Update goals
+
+on:
+  schedule:
+    # 19:00 UTC covers 8pm London during BST, 20:00 UTC covers it during GMT.
+    # The guard step below lets exactly one of them through each Sunday.
+    - cron: "0 19 * * 0"
+    - cron: "0 20 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-goals
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Only run at 8pm UK time
+        id: gate
+        run: |
+          hour=$(TZ=Europe/London date +%H)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$hour" = "20" ]; then
+            echo "go=yes" >> "$GITHUB_OUTPUT"
+            echo "Running (London hour: $hour)"
+          else
+            echo "go=no" >> "$GITHUB_OUTPUT"
+            echo "Skipping — London hour is $hour, not 20."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.go == 'yes'
+
+      - name: Fetch latest goals
+        if: steps.gate.outputs.go == 'yes'
+        run: python3 scripts/update.py
+
+      - name: Commit if anything changed
+        if: steps.gate.outputs.go == 'yes'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/standings.json; then
+            echo "No change this week."
+          else
+            git add data/standings.json
+            git commit -m "Update goals — $(TZ=Europe/London date '+%d %b %Y')"
+            git push
+          fi
