@@ -11,10 +11,16 @@ the aim is for their combined 2026/27 league goals to total exactly **21**.
   Players are pinned by their Premier League player id, so the tally survives a
   name spelling change or a transfer.
 - `scripts/update.py` — pulls the official Premier League player feed and writes
-  `data/standings.json`.
+  `data/standings.json`. It also fetches each scorer's match history so a row can
+  show which games the goals came in; players still on nought are skipped, so the
+  run costs one call plus one per scorer.
 - `index.html` — reads that file and draws the cards.
 - `.github/workflows/update.yml` — runs the script every **Sunday at 8pm UK time**
   and commits the result, which republishes the page.
+
+Tapping a player who has scored opens their goals by fixture — gameweek,
+opponent, and the final score. It uses `<details>`/`<summary>`, so it works with
+a keyboard and a screen reader without extra scripting.
 
 Only Premier League goals count. Own goals are excluded.
 

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22T13:47:28+00:00",
+  "generated": "2026-09-22T13:56:07+00:00",
   "season": "2026/27",
   "title": "Race to 21",
   "rules": "Pick four players whose total goals in the 2026-27 Premier League season add up to 21. Any four players, from any team — including four from the same team.",
@@ -65,7 +65,39 @@
           "position": "MID",
           "goals": 3,
           "minutes": 437,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 4,
+              "opponent": "HUL",
+              "opponentName": "Hull City",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 2,
+              "date": "2026-09-12"
+            },
+            {
+              "round": 3,
+              "opponent": "ARS",
+              "opponentName": "Arsenal",
+              "home": false,
+              "goals": 1,
+              "for": 1,
+              "against": 2,
+              "date": "2026-09-06"
+            },
+            {
+              "round": 1,
+              "opponent": "FUL",
+              "opponentName": "Fulham",
+              "home": false,
+              "goals": 1,
+              "for": 3,
+              "against": 2,
+              "date": "2026-08-24"
+            }
+          ]
         },
         {
           "id": 26,
@@ -75,7 +107,29 @@
           "position": "FWD",
           "goals": 2,
           "minutes": 437,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 3,
+              "opponent": "CHE",
+              "opponentName": "Chelsea",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 1,
+              "date": "2026-09-06"
+            },
+            {
+              "round": 1,
+              "opponent": "COV",
+              "opponentName": "Coventry City",
+              "home": true,
+              "goals": 1,
+              "for": 3,
+              "against": 0,
+              "date": "2026-08-21"
+            }
+          ]
         },
         {
           "id": 106,
@@ -85,7 +139,19 @@
           "position": "FWD",
           "goals": 1,
           "minutes": 442,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 5,
+              "opponent": "CHE",
+              "opponentName": "Chelsea",
+              "home": true,
+              "goals": 1,
+              "for": 3,
+              "against": 0,
+              "date": "2026-09-18"
+            }
+          ]
         },
         {
           "id": 356,
@@ -95,7 +161,8 @@
           "position": "DEF",
           "goals": 0,
           "minutes": 450,
-          "active": true
+          "active": true,
+          "games": []
         }
       ],
       "total": 6,
@@ -117,7 +184,29 @@
           "position": "FWD",
           "goals": 2,
           "minutes": 419,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 4,
+              "opponent": "NEW",
+              "opponentName": "Newcastle",
+              "home": true,
+              "goals": 1,
+              "for": 4,
+              "against": 1,
+              "date": "2026-09-14"
+            },
+            {
+              "round": 2,
+              "opponent": "BRE",
+              "opponentName": "Brentford",
+              "home": true,
+              "goals": 1,
+              "for": 1,
+              "against": 1,
+              "date": "2026-08-30"
+            }
+          ]
         },
         {
           "id": 368,
@@ -127,7 +216,19 @@
           "position": "MID",
           "goals": 1,
           "minutes": 440,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 1,
+              "opponent": "NEW",
+              "opponentName": "Newcastle",
+              "home": false,
+              "goals": 1,
+              "for": 2,
+              "against": 2,
+              "date": "2026-08-23"
+            }
+          ]
         },
         {
           "id": 569,
@@ -137,7 +238,19 @@
           "position": "FWD",
           "goals": 1,
           "minutes": 425,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 1,
+              "opponent": "CHE",
+              "opponentName": "Chelsea",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 3,
+              "date": "2026-08-24"
+            }
+          ]
         },
         {
           "id": 208,
@@ -147,7 +260,8 @@
           "position": "MID",
           "goals": 0,
           "minutes": 8,
-          "active": true
+          "active": true,
+          "games": []
         }
       ],
       "total": 4,
@@ -169,7 +283,29 @@
           "position": "FWD",
           "goals": 2,
           "minutes": 437,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 3,
+              "opponent": "CHE",
+              "opponentName": "Chelsea",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 1,
+              "date": "2026-09-06"
+            },
+            {
+              "round": 1,
+              "opponent": "COV",
+              "opponentName": "Coventry City",
+              "home": true,
+              "goals": 1,
+              "for": 3,
+              "against": 0,
+              "date": "2026-08-21"
+            }
+          ]
         },
         {
           "id": 368,
@@ -179,7 +315,19 @@
           "position": "MID",
           "goals": 1,
           "minutes": 440,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 1,
+              "opponent": "NEW",
+              "opponentName": "Newcastle",
+              "home": false,
+              "goals": 1,
+              "for": 2,
+              "against": 2,
+              "date": "2026-08-23"
+            }
+          ]
         },
         {
           "id": 356,
@@ -189,7 +337,8 @@
           "position": "DEF",
           "goals": 0,
           "minutes": 450,
-          "active": true
+          "active": true,
+          "games": []
         },
         {
           "id": 4,
@@ -199,7 +348,8 @@
           "position": "DEF",
           "goals": 0,
           "minutes": 450,
-          "active": true
+          "active": true,
+          "games": []
         }
       ],
       "total": 3,
@@ -221,7 +371,19 @@
           "position": "MID",
           "goals": 1,
           "minutes": 271,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 5,
+              "opponent": "SUN",
+              "opponentName": "Sunderland",
+              "home": true,
+              "goals": 1,
+              "for": 5,
+              "against": 3,
+              "date": "2026-09-20"
+            }
+          ]
         },
         {
           "id": 388,
@@ -231,7 +393,19 @@
           "position": "DEF",
           "goals": 1,
           "minutes": 450,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 1,
+              "opponent": "BOU",
+              "opponentName": "Bournemouth",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 1,
+              "date": "2026-08-23"
+            }
+          ]
         },
         {
           "id": 366,
@@ -241,7 +415,8 @@
           "position": "MID",
           "goals": 0,
           "minutes": 402,
-          "active": true
+          "active": true,
+          "games": []
         },
         {
           "id": 8,
@@ -251,7 +426,8 @@
           "position": "DEF",
           "goals": 0,
           "minutes": 416,
-          "active": true
+          "active": true,
+          "games": []
         }
       ],
       "total": 2,
@@ -273,7 +449,19 @@
           "position": "DEF",
           "goals": 1,
           "minutes": 434,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 1,
+              "opponent": "BOU",
+              "opponentName": "Bournemouth",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 1,
+              "date": "2026-08-23"
+            }
+          ]
         },
         {
           "id": 79,
@@ -283,7 +471,8 @@
           "position": "FWD",
           "goals": 0,
           "minutes": 424,
-          "active": true
+          "active": true,
+          "games": []
         },
         {
           "id": 17,
@@ -293,7 +482,8 @@
           "position": "MID",
           "goals": 0,
           "minutes": 81,
-          "active": true
+          "active": true,
+          "games": []
         },
         {
           "id": 75,
@@ -303,7 +493,8 @@
           "position": "MID",
           "goals": 0,
           "minutes": 102,
-          "active": true
+          "active": true,
+          "games": []
         }
       ],
       "total": 1,
@@ -325,7 +516,19 @@
           "position": "MID",
           "goals": 1,
           "minutes": 450,
-          "active": true
+          "active": true,
+          "games": [
+            {
+              "round": 2,
+              "opponent": "LIV",
+              "opponentName": "Liverpool",
+              "home": false,
+              "goals": 1,
+              "for": 2,
+              "against": 2,
+              "date": "2026-08-29"
+            }
+          ]
         },
         {
           "id": 387,
@@ -335,7 +538,8 @@
           "position": "DEF",
           "goals": 0,
           "minutes": 163,
-          "active": true
+          "active": true,
+          "games": []
         },
         {
           "id": 356,
@@ -345,7 +549,8 @@
           "position": "DEF",
           "goals": 0,
           "minutes": 450,
-          "active": true
+          "active": true,
+          "games": []
         },
         {
           "id": 4,
@@ -355,7 +560,8 @@
           "position": "DEF",
           "goals": 0,
           "minutes": 450,
-          "active": true
+          "active": true,
+          "games": []
         }
       ],
       "total": 1,
@@ -377,7 +583,8 @@
           "position": "DEF",
           "goals": 0,
           "minutes": 450,
-          "active": true
+          "active": true,
+          "games": []
         },
         {
           "id": 13,
@@ -387,7 +594,8 @@
           "position": "MID",
           "goals": 0,
           "minutes": 411,
-          "active": true
+          "active": true,
+          "games": []
         },
         {
           "id": 418,
@@ -397,7 +605,8 @@
           "position": "DEF",
           "goals": 0,
           "minutes": 450,
-          "active": true
+          "active": true,
+          "games": []
         },
         {
           "id": 400,
@@ -407,7 +616,8 @@
           "position": "MID",
           "goals": 0,
           "minutes": 15,
-          "active": true
+          "active": true,
+          "games": []
         }
       ],
       "total": 0,

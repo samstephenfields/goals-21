@@ -124,11 +124,28 @@
 
   ul{list-style:none;display:flex;flex-direction:column;gap:2px}
   li{
-    display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;
-    background:rgba(255,255,255,.017);transition:background .15s;
+    border-radius:9px;background:rgba(255,255,255,.017);
+    transition:background .15s;overflow:hidden;
   }
-  li:hover{background:rgba(255,255,255,.045)}
   li.scored{background:rgba(47,224,138,.055)}
+  .rw,summary{display:flex;align-items:center;gap:10px;padding:9px 10px}
+  summary{cursor:pointer;list-style:none;-webkit-tap-highlight-color:transparent}
+  summary::-webkit-details-marker{display:none}
+  summary:hover{background:rgba(255,255,255,.05)}
+  summary:focus-visible{outline:2px solid var(--accent2);outline-offset:-2px}
+  details[open] summary{background:rgba(255,255,255,.045)}
+  .chev{width:11px;height:11px;flex:none;fill:var(--faint);transition:transform .2s}
+  details[open] .chev{transform:rotate(180deg)}
+  .games{padding:0 10px 4px}
+  .game{
+    display:flex;align-items:center;gap:9px;padding:7px 2px;font-size:12px;
+    color:var(--dim);border-top:1px solid rgba(255,255,255,.06);
+  }
+  .gw{font-weight:700;color:var(--faint);width:30px;flex:none;font-variant-numeric:tabular-nums}
+  .opp{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .opp b{color:var(--text);font-weight:600}
+  .sc{font-variant-numeric:tabular-nums;color:var(--faint);flex:none}
+  .gg{flex:none;color:var(--accent);font-weight:700;font-size:11px}
   .pos{
     font-size:9px;font-weight:800;letter-spacing:.05em;color:var(--faint);
     background:var(--card2);border-radius:4px;padding:3px 5px;width:32px;text-align:center;flex:none;
@@ -156,7 +173,8 @@
     .card{padding:15px 14px;border-radius:14px}
     .who .nom{font-size:18px}
     .tot b{font-size:28px}
-    li{padding:11px 10px}
+    .rw,summary{padding:12px 10px}
+    .game{font-size:12.5px;padding:8px 2px}
     .nm{font-size:15px}
     .g{font-size:15px}
     header{margin-bottom:26px}
@@ -180,6 +198,16 @@
   </footer>
 </div>
 <script>
+const CHEV = '<svg class="chev" viewBox="0 0 24 24" aria-hidden="true">'
+  + '<path d="M12 15.6 4.8 8.4l1.6-1.6L12 12.4l5.6-5.6 1.6 1.6z"/></svg>';
+
+const fullDate = iso => {
+  if (!iso) return '';
+  const d = new Date(iso + 'T12:00:00Z');
+  return isNaN(d) ? '' : d.toLocaleDateString('en-GB',
+    { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+};
+
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 function render(d) {
@@ -212,13 +240,32 @@ function render(d) {
     const crest = club.crest || '';
     const img   = c => `<img class="${c}" src="${esc(crest)}" alt="" decoding="async">`;
 
-    const rows = p.players.map(pl => `
-      <li class="${pl.goals > 0 ? 'scored' : ''}">
-        <span class="pos">${esc(pl.position)}</span>
+    const rows = p.players.map(pl => {
+      const label = `<span class="pos">${esc(pl.position)}</span>
         <span class="nm">${esc(pl.name)}<span class="tm">${esc(pl.teamShort)}</span>${
           pl.active ? '' : '<span class="out">OUT</span>'}</span>
-        <span class="g">${pl.goals}</span>
-      </li>`).join('');
+        <span class="g">${pl.goals}</span>`;
+
+      // Nothing to open for a player yet to score.
+      if (!pl.games || !pl.games.length) {
+        return `<li class="${pl.goals > 0 ? 'scored' : ''}"><div class="rw">${label}</div></li>`;
+      }
+
+      const games = pl.games.map(g => `
+        <div class="game" title="${esc(fullDate(g.date))}">
+          <span class="gw">GW${g.round}</span>
+          <span class="opp">${g.home ? 'v' : 'at'} <b>${esc(g.opponent)}</b></span>
+          <span class="sc">${g.for}–${g.against}</span>
+          <span class="gg">${g.goals > 1 ? '⚽ ×' + g.goals : '⚽'}</span>
+        </div>`).join('');
+
+      return `<li class="scored">
+        <details>
+          <summary>${label}${CHEV}</summary>
+          <div class="games">${games}</div>
+        </details>
+      </li>`;
+    }).join('');
 
     return `<article class="card ${lead ? 'lead' : ''} ${hit ? 'done' : ''} ${bust ? 'bust' : ''}"
       style="--c1:${club.c1 || '#2f3d52'};--c2:${club.c2 || '#2f3d52'};--ink:${club.ink || '#8a97ab'}">
