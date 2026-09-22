@@ -21,10 +21,21 @@ Only Premier League goals count. Own goals are excluded.
 ## Club crests
 
 Each card is themed to the club its owner supports — a banner gradient in the
-club's colours and a watermark motif. The motifs are original drawings nodding to
-each club's nickname (a cannon, a liver bird, a trident, cherries, a lion) rather
-than the clubs' actual badges, which are trademarked. They live in the `CRESTS`
-object in `index.html`; colours are in the `clubs` block of `data/picks.json`.
+club's colours, the club crest as a faint watermark, and the crest again beside
+the name.
+
+The images in `crests/` are generated from source artwork by
+`scripts/prep_crests.py`, which knocks out the background (flood filling inward
+from the edges, so white *inside* a crest survives), trims to the artwork, fits
+it to a 240px square and saves a palette PNG. That keeps the whole set to about
+55KB. Re-run it only when adding or replacing a club:
+
+```
+python3 -m pip install Pillow
+python3 scripts/prep_crests.py "/path/to/crest artwork"
+```
+
+Club colours and crest paths live in the `clubs` block of `data/picks.json`.
 
 ## Running it by hand
 

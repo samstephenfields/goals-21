@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22T13:37:04+00:00",
+  "generated": "2026-09-22T13:47:28+00:00",
   "season": "2026/27",
   "title": "Race to 21",
   "rules": "Pick four players whose total goals in the 2026-27 Premier League season add up to 21. Any four players, from any team — including four from the same team.",
@@ -14,7 +14,7 @@
       "nick": "The Gunners",
       "c1": "#EF0107",
       "c2": "#DB9E00",
-      "crest": "cannon",
+      "crest": "crests/arsenal.png",
       "ink": "#FF3A3F"
     },
     "liverpool": {
@@ -22,7 +22,7 @@
       "nick": "The Reds",
       "c1": "#C8102E",
       "c2": "#00B2A9",
-      "crest": "bird",
+      "crest": "crests/liverpool.png",
       "ink": "#F01E3C"
     },
     "manutd": {
@@ -30,7 +30,7 @@
       "nick": "Red Devils",
       "c1": "#DA291C",
       "c2": "#FBE122",
-      "crest": "trident",
+      "crest": "crests/manutd.png",
       "ink": "#F5462F"
     },
     "bournemouth": {
@@ -38,7 +38,7 @@
       "nick": "The Cherries",
       "c1": "#C8102E",
       "c2": "#3d3d3d",
-      "crest": "cherries",
+      "crest": "crests/bournemouth.png",
       "ink": "#F01E3C"
     },
     "chelsea": {
@@ -46,7 +46,7 @@
       "nick": "The Blues",
       "c1": "#034694",
       "c2": "#4DA3FF",
-      "crest": "lion",
+      "crest": "crests/chelsea.png",
       "ink": "#4DA3FF"
     }
   },

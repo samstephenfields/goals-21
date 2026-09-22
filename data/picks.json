@@ -105,7 +105,7 @@
       "nick": "The Gunners",
       "c1": "#EF0107",
       "c2": "#DB9E00",
-      "crest": "cannon",
+      "crest": "crests/arsenal.png",
       "ink": "#FF3A3F"
     },
     "liverpool": {
@@ -113,7 +113,7 @@
       "nick": "The Reds",
       "c1": "#C8102E",
       "c2": "#00B2A9",
-      "crest": "bird",
+      "crest": "crests/liverpool.png",
       "ink": "#F01E3C"
     },
     "manutd": {
@@ -121,7 +121,7 @@
       "nick": "Red Devils",
       "c1": "#DA291C",
       "c2": "#FBE122",
-      "crest": "trident",
+      "crest": "crests/manutd.png",
       "ink": "#F5462F"
     },
     "bournemouth": {
@@ -129,7 +129,7 @@
       "nick": "The Cherries",
       "c1": "#C8102E",
       "c2": "#3d3d3d",
-      "crest": "cherries",
+      "crest": "crests/bournemouth.png",
       "ink": "#F01E3C"
     },
     "chelsea": {
@@ -137,7 +137,7 @@
       "nick": "The Blues",
       "c1": "#034694",
       "c2": "#4DA3FF",
-      "crest": "lion",
+      "crest": "crests/chelsea.png",
       "ink": "#4DA3FF"
     }
   }
