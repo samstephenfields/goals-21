@@ -1,11 +1,13 @@
 {
-  "generated": "2026-11-01T15:54:48+00:00",
+  "generated": "2026-11-01T16:15:56+00:00",
   "season": "2026/27",
   "title": "Race to 21",
   "rules": "Pick four players whose total goals in the 2026-27 Premier League season add up to 21. Any four players, from any team — including four from the same team.",
   "target": 21,
   "gameweek": 9,
   "gameweeksPlayed": 8,
+  "lastGameweek": 9,
+  "totalGameweeks": 38,
   "source": "Premier League Fantasy API",
   "sourceUrl": "https://fantasy.premierleague.com/api/bootstrap-static/",
   "clubs": {
@@ -53,6 +55,21 @@
   "people": [
     {
       "name": "Alexi",
+      "order": 0,
+      "curve": [
+        2,
+        2,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        9
+      ],
+      "projected": 43,
+      "projectedRemaining": -22,
+      "xg": 9.29,
       "club": "arsenal",
       "clubName": "Arsenal",
       "clubNick": "The Gunners",
@@ -66,6 +83,10 @@
           "goals": 5,
           "minutes": 790,
           "active": true,
+          "xg": 2.78,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": [
             {
               "round": 9,
@@ -75,7 +96,8 @@
               "goals": 1,
               "for": 2,
               "against": 0,
-              "date": "2026-10-31"
+              "date": "2026-10-31",
+              "xg": 0.65
             },
             {
               "round": 6,
@@ -85,7 +107,8 @@
               "goals": 1,
               "for": 5,
               "against": 1,
-              "date": "2026-10-10"
+              "date": "2026-10-10",
+              "xg": 0.18
             },
             {
               "round": 4,
@@ -95,7 +118,8 @@
               "goals": 1,
               "for": 2,
               "against": 2,
-              "date": "2026-09-12"
+              "date": "2026-09-12",
+              "xg": 0.21
             },
             {
               "round": 3,
@@ -105,7 +129,8 @@
               "goals": 1,
               "for": 1,
               "against": 2,
-              "date": "2026-09-06"
+              "date": "2026-09-06",
+              "xg": 0.08
             },
             {
               "round": 1,
@@ -115,7 +140,8 @@
               "goals": 1,
               "for": 3,
               "against": 2,
-              "date": "2026-08-24"
+              "date": "2026-08-24",
+              "xg": 0.96
             }
           ]
         },
@@ -128,6 +154,10 @@
           "goals": 2,
           "minutes": 802,
           "active": true,
+          "xg": 4.06,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": [
             {
               "round": 9,
@@ -137,7 +167,8 @@
               "goals": 1,
               "for": 2,
               "against": 0,
-              "date": "2026-10-31"
+              "date": "2026-10-31",
+              "xg": 0.28
             },
             {
               "round": 5,
@@ -147,7 +178,8 @@
               "goals": 1,
               "for": 3,
               "against": 0,
-              "date": "2026-09-18"
+              "date": "2026-09-18",
+              "xg": 0.72
             }
           ]
         },
@@ -160,6 +192,10 @@
           "goals": 2,
           "minutes": 586,
           "active": true,
+          "xg": 2.14,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": [
             {
               "round": 3,
@@ -169,7 +205,8 @@
               "goals": 1,
               "for": 2,
               "against": 1,
-              "date": "2026-09-06"
+              "date": "2026-09-06",
+              "xg": 0.27
             },
             {
               "round": 1,
@@ -179,7 +216,8 @@
               "goals": 1,
               "for": 3,
               "against": 0,
-              "date": "2026-08-21"
+              "date": "2026-08-21",
+              "xg": 0.26
             }
           ]
         },
@@ -192,6 +230,10 @@
           "goals": 0,
           "minutes": 720,
           "active": true,
+          "xg": 0.31,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": []
         }
       ],
@@ -202,6 +244,21 @@
     },
     {
       "name": "Sam",
+      "order": 2,
+      "curve": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "projected": 24,
+      "projectedRemaining": -3,
+      "xg": 6.05,
       "club": "bournemouth",
       "clubName": "Bournemouth",
       "clubNick": "The Cherries",
@@ -215,6 +272,10 @@
           "goals": 4,
           "minutes": 753,
           "active": true,
+          "xg": 3.6,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": [
             {
               "round": 9,
@@ -224,7 +285,8 @@
               "goals": 1,
               "for": 2,
               "against": 0,
-              "date": "2026-10-31"
+              "date": "2026-10-31",
+              "xg": 0.49
             },
             {
               "round": 8,
@@ -234,7 +296,8 @@
               "goals": 1,
               "for": 3,
               "against": 0,
-              "date": "2026-10-25"
+              "date": "2026-10-25",
+              "xg": 0.52
             },
             {
               "round": 7,
@@ -244,7 +307,8 @@
               "goals": 1,
               "for": 2,
               "against": 0,
-              "date": "2026-10-18"
+              "date": "2026-10-18",
+              "xg": 1.11
             },
             {
               "round": 6,
@@ -254,7 +318,8 @@
               "goals": 1,
               "for": 1,
               "against": 5,
-              "date": "2026-10-10"
+              "date": "2026-10-10",
+              "xg": 0.61
             }
           ]
         },
@@ -267,6 +332,10 @@
           "goals": 1,
           "minutes": 655,
           "active": true,
+          "xg": 0.8,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": [
             {
               "round": 1,
@@ -276,7 +345,8 @@
               "goals": 1,
               "for": 2,
               "against": 1,
-              "date": "2026-08-23"
+              "date": "2026-08-23",
+              "xg": 0.19
             }
           ]
         },
@@ -289,6 +359,10 @@
           "goals": 0,
           "minutes": 173,
           "active": true,
+          "xg": 0.75,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": []
         },
         {
@@ -300,6 +374,10 @@
           "goals": 0,
           "minutes": 346,
           "active": true,
+          "xg": 0.9,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": []
         }
       ],
@@ -310,6 +388,21 @@
     },
     {
       "name": "Keone",
+      "order": 3,
+      "curve": [
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "projected": 24,
+      "projectedRemaining": -3,
+      "xg": 9.4,
       "club": "liverpool",
       "clubName": "Liverpool",
       "clubNick": "The Reds",
@@ -323,6 +416,10 @@
           "goals": 3,
           "minutes": 773,
           "active": true,
+          "xg": 3.91,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": [
             {
               "round": 7,
@@ -332,7 +429,8 @@
               "goals": 1,
               "for": 1,
               "against": 1,
-              "date": "2026-10-18"
+              "date": "2026-10-18",
+              "xg": 0.6
             },
             {
               "round": 4,
@@ -342,7 +440,8 @@
               "goals": 1,
               "for": 4,
               "against": 1,
-              "date": "2026-09-14"
+              "date": "2026-09-14",
+              "xg": 0.87
             },
             {
               "round": 2,
@@ -352,7 +451,8 @@
               "goals": 1,
               "for": 1,
               "against": 1,
-              "date": "2026-08-30"
+              "date": "2026-08-30",
+              "xg": 0.92
             }
           ]
         },
@@ -365,6 +465,10 @@
           "goals": 1,
           "minutes": 471,
           "active": true,
+          "xg": 1.52,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": [
             {
               "round": 1,
@@ -374,7 +478,8 @@
               "goals": 1,
               "for": 2,
               "against": 2,
-              "date": "2026-08-23"
+              "date": "2026-08-23",
+              "xg": 0.85
             }
           ]
         },
@@ -387,6 +492,10 @@
           "goals": 1,
           "minutes": 754,
           "active": true,
+          "xg": 3.97,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": [
             {
               "round": 1,
@@ -396,7 +505,8 @@
               "goals": 1,
               "for": 2,
               "against": 3,
-              "date": "2026-08-24"
+              "date": "2026-08-24",
+              "xg": 0.73
             }
           ]
         },
@@ -409,6 +519,10 @@
           "goals": 0,
           "minutes": 15,
           "active": true,
+          "xg": 0.0,
+          "status": "i",
+          "news": "Groin injury - Expected back 8 Nov",
+          "chance": 0,
           "games": []
         }
       ],
@@ -419,6 +533,21 @@
     },
     {
       "name": "Max",
+      "order": 6,
+      "curve": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "projected": 19,
+      "projectedRemaining": 2,
+      "xg": 5.44,
       "club": "liverpool",
       "clubName": "Liverpool",
       "clubNick": "The Reds",
@@ -432,6 +561,10 @@
           "goals": 2,
           "minutes": 586,
           "active": true,
+          "xg": 2.14,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": [
             {
               "round": 3,
@@ -441,7 +574,8 @@
               "goals": 1,
               "for": 2,
               "against": 1,
-              "date": "2026-09-06"
+              "date": "2026-09-06",
+              "xg": 0.27
             },
             {
               "round": 1,
@@ -451,7 +585,8 @@
               "goals": 1,
               "for": 3,
               "against": 0,
-              "date": "2026-08-21"
+              "date": "2026-08-21",
+              "xg": 0.26
             }
           ]
         },
@@ -464,6 +599,10 @@
           "goals": 1,
           "minutes": 720,
           "active": true,
+          "xg": 1.47,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": [
             {
               "round": 8,
@@ -473,7 +612,8 @@
               "goals": 1,
               "for": 2,
               "against": 0,
-              "date": "2026-10-24"
+              "date": "2026-10-24",
+              "xg": 0.54
             }
           ]
         },
@@ -486,6 +626,10 @@
           "goals": 1,
           "minutes": 471,
           "active": true,
+          "xg": 1.52,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": [
             {
               "round": 1,
@@ -495,7 +639,8 @@
               "goals": 1,
               "for": 2,
               "against": 2,
-              "date": "2026-08-23"
+              "date": "2026-08-23",
+              "xg": 0.85
             }
           ]
         },
@@ -508,6 +653,10 @@
           "goals": 0,
           "minutes": 720,
           "active": true,
+          "xg": 0.31,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": []
         }
       ],
@@ -518,6 +667,21 @@
     },
     {
       "name": "Yuseph",
+      "order": 4,
+      "curve": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3
+      ],
+      "projected": 14,
+      "projectedRemaining": 7,
+      "xg": 4.38,
       "club": "manutd",
       "clubName": "Man United",
       "clubNick": "Red Devils",
@@ -531,6 +695,10 @@
           "goals": 1,
           "minutes": 609,
           "active": true,
+          "xg": 1.22,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": [
             {
               "round": 6,
@@ -540,7 +708,8 @@
               "goals": 1,
               "for": 2,
               "against": 1,
-              "date": "2026-10-10"
+              "date": "2026-10-10",
+              "xg": 0.55
             }
           ]
         },
@@ -553,6 +722,10 @@
           "goals": 1,
           "minutes": 543,
           "active": true,
+          "xg": 0.98,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": [
             {
               "round": 5,
@@ -562,7 +735,8 @@
               "goals": 1,
               "for": 5,
               "against": 3,
-              "date": "2026-09-20"
+              "date": "2026-09-20",
+              "xg": 0.04
             }
           ]
         },
@@ -575,6 +749,10 @@
           "goals": 1,
           "minutes": 675,
           "active": true,
+          "xg": 0.95,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": [
             {
               "round": 1,
@@ -584,7 +762,8 @@
               "goals": 1,
               "for": 2,
               "against": 1,
-              "date": "2026-08-23"
+              "date": "2026-08-23",
+              "xg": 0.89
             }
           ]
         },
@@ -597,6 +776,10 @@
           "goals": 0,
           "minutes": 621,
           "active": true,
+          "xg": 1.23,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": []
         }
       ],
@@ -607,6 +790,21 @@
     },
     {
       "name": "Jack",
+      "order": 1,
+      "curve": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "projected": 10,
+      "projectedRemaining": 11,
+      "xg": 2.81,
       "club": "arsenal",
       "clubName": "Arsenal",
       "clubNick": "The Gunners",
@@ -620,6 +818,10 @@
           "goals": 1,
           "minutes": 720,
           "active": true,
+          "xg": 1.47,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": [
             {
               "round": 8,
@@ -629,7 +831,8 @@
               "goals": 1,
               "for": 2,
               "against": 0,
-              "date": "2026-10-24"
+              "date": "2026-10-24",
+              "xg": 0.54
             }
           ]
         },
@@ -642,6 +845,10 @@
           "goals": 1,
           "minutes": 305,
           "active": true,
+          "xg": 0.7,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": [
             {
               "round": 6,
@@ -651,7 +858,8 @@
               "goals": 1,
               "for": 3,
               "against": 0,
-              "date": "2026-10-11"
+              "date": "2026-10-11",
+              "xg": 0.05
             }
           ]
         },
@@ -664,6 +872,10 @@
           "goals": 0,
           "minutes": 670,
           "active": true,
+          "xg": 0.32,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": []
         },
         {
@@ -675,6 +887,10 @@
           "goals": 0,
           "minutes": 810,
           "active": true,
+          "xg": 0.32,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": []
         }
       ],
@@ -685,6 +901,21 @@
     },
     {
       "name": "Yunus",
+      "order": 5,
+      "curve": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "projected": 10,
+      "projectedRemaining": 11,
+      "xg": 5.55,
       "club": "chelsea",
       "clubName": "Chelsea",
       "clubNick": "The Blues",
@@ -698,6 +929,10 @@
           "goals": 1,
           "minutes": 720,
           "active": true,
+          "xg": 2.54,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": [
             {
               "round": 2,
@@ -707,7 +942,8 @@
               "goals": 1,
               "for": 2,
               "against": 2,
-              "date": "2026-08-29"
+              "date": "2026-08-29",
+              "xg": 0.79
             }
           ]
         },
@@ -720,6 +956,10 @@
           "goals": 1,
           "minutes": 720,
           "active": true,
+          "xg": 1.47,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": [
             {
               "round": 8,
@@ -729,7 +969,8 @@
               "goals": 1,
               "for": 2,
               "against": 0,
-              "date": "2026-10-24"
+              "date": "2026-10-24",
+              "xg": 0.54
             }
           ]
         },
@@ -742,6 +983,10 @@
           "goals": 0,
           "minutes": 314,
           "active": true,
+          "xg": 1.23,
+          "status": "a",
+          "news": "",
+          "chance": 100,
           "games": []
         },
         {
@@ -753,6 +998,10 @@
           "goals": 0,
           "minutes": 720,
           "active": true,
+          "xg": 0.31,
+          "status": "a",
+          "news": "",
+          "chance": null,
           "games": []
         }
       ],

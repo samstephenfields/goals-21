@@ -40,15 +40,23 @@ jobs:
         if: steps.gate.outputs.go == 'yes'
         run: python3 scripts/update.py
 
+      # A font or Pillow hiccup must never block the goals, which are the point.
+      - name: Rebuild the link preview
+        if: steps.gate.outputs.go == 'yes'
+        continue-on-error: true
+        run: |
+          python3 -m pip install --quiet --disable-pip-version-check Pillow
+          python3 scripts/make_og.py
+
       - name: Commit if anything changed
         if: steps.gate.outputs.go == 'yes'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- data/standings.json; then
+          if git diff --quiet -- data/standings.json og.png index.html; then
             echo "No change this week."
           else
-            git add data/standings.json
+            git add data/standings.json og.png index.html
             git commit -m "Update goals — $(TZ=Europe/London date '+%d %b %Y')"
             git push
           fi

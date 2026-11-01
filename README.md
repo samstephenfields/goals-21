@@ -33,8 +33,31 @@ are more than 8 days old — so a stalled schedule shows up as a failed run
 rather than a quiet success.
 
 Tapping a player who has scored opens their goals by fixture — gameweek,
-opponent, and the final score. It uses `<details>`/`<summary>`, so it works with
-a keyboard and a screen reader without extra scripting.
+opponent, final score and that match's xG — above a season xG summary saying
+whether he's been riding his luck or is due a goal. (Season xG covers every
+appearance, so it won't equal the fixtures listed beneath it.) It uses
+`<details>`/`<summary>`, so it works with a keyboard and a screen reader without
+extra scripting. Team news from the feed shows as an INJ, DOUBT or SUSP flag on
+the player's row.
+
+**Now / On pace** switches the table between goals scored and a naive
+extrapolation over all 38 gameweeks. It reorders the board, because leading on
+goals and being on course for exactly 21 are very different things.
+
+**The season chart** plots each person's cumulative goals gameweek by gameweek
+against the target line. The curves are rebuilt from the per-match data on every
+run rather than stored, so they cannot drift away from the totals.
+
+Seven series share one chart, and no seven-hue palette clears the colour
+separation floors when every line is on screen at once, so each series also
+carries its own dash pattern, repeated in the legend. Identity never rests on
+hue alone. The palette is slots 1-7 of the reference dark categorical theme,
+checked with the data-viz validator against this page's card surface.
+
+`scripts/make_og.py` draws `og.png`, the card WhatsApp shows when the link is
+pasted into the group, and rewrites the `og:` block in `index.html`. The image
+URL carries the gameweek, because WhatsApp caches a preview per URL and would
+otherwise never show a new week.
 
 Only Premier League goals count. Own goals are excluded.
 

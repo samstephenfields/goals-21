@@ -55,9 +55,28 @@ def scoring_games(pid, teams):
             "for": for_,
             "against": against,
             "date": (g.get("kickoff_time") or "")[:10],
+            "xg": round(float(g.get("expected_goals") or 0), 2),
         })
     games.sort(key=lambda x: -x["round"])
     return games
+
+
+def season_curve(players, last_gw):
+    """Cumulative goals for one person at the end of each gameweek so far.
+
+    Derived from the per-match data rather than a stored history, so it cannot
+    drift out of step with the totals and needs no state between runs.
+    """
+    per_gw = [0] * (last_gw + 1)
+    for pl in players:
+        for g in pl["games"]:
+            if 1 <= g["round"] <= last_gw:
+                per_gw[g["round"]] += g["goals"]
+    curve, running = [], 0
+    for gw in range(1, last_gw + 1):
+        running += per_gw[gw]
+        curve.append(running)
+    return curve
 
 
 def previous():
@@ -101,9 +120,12 @@ def main():
     current = next((e for e in data["events"] if e.get("is_current")), None)
     played = len(finished)
 
+    scored_in = [g["round"] for gl in games_by_id.values() for g in gl]
+    last_gw = max([played] + scored_in) if (played or scored_in) else 0
+
     missing = []
     people = []
-    for person in picks["people"]:
+    for order, person in enumerate(picks["people"]):
         players = []
         for pid in person["picks"]:
             el = elements.get(pid)
@@ -117,6 +139,10 @@ def main():
                     "goals": el["goals_scored"],
                     "minutes": el["minutes"],
                     "active": True,
+                    "xg": round(float(el.get("expected_goals") or 0), 2),
+                    "status": el.get("status", "a"),
+                    "news": el.get("news") or "",
+                    "chance": el.get("chance_of_playing_next_round"),
                     "games": games_by_id.get(pid, []),
                 })
             else:
@@ -132,13 +158,30 @@ def main():
                     "goals": old.get("goals", 0),
                     "minutes": old.get("minutes", 0),
                     "active": False,
+                    "xg": old.get("xg", 0),
+                    "status": "u",
+                    "news": old.get("news", "No longer in the Premier League"),
+                    "chance": 0,
                     "games": old.get("games", []),
                 })
         total = sum(p["goals"] for p in players)
         players.sort(key=lambda p: -p["goals"])
         club = picks["clubs"].get(person.get("club"), {})
+        curve = season_curve(players, last_gw)
+        if curve and curve[-1] != total:
+            print("warning: %s curve ends on %d but total is %d"
+                  % (person["name"], curve[-1], total), file=sys.stderr)
+        # Naive pace, flagged as such in the UI: goals so far over a full 38.
+        projected = round(total / played * 38) if played else None
         people.append({
             "name": person["name"],
+            # Fixed slot from picks.json so a series keeps its colour when the
+            # table is re-sorted. Colour follows the person, never their rank.
+            "order": order,
+            "curve": curve,
+            "projected": projected,
+            "projectedRemaining": (picks["target"] - projected) if projected is not None else None,
+            "xg": round(sum(p["xg"] for p in players), 2),
             "club": person.get("club"),
             "clubName": club.get("name"),
             "clubNick": club.get("nick"),
@@ -161,6 +204,8 @@ def main():
         "target": picks["target"],
         "gameweek": current["id"] if current else played,
         "gameweeksPlayed": played,
+        "lastGameweek": last_gw,
+        "totalGameweeks": len(data["events"]),
         "source": "Premier League Fantasy API",
         "sourceUrl": API,
         "clubs": picks["clubs"],
@@ -176,7 +221,12 @@ def main():
         print("warning: %d pick(s) not in the API, carried over: %s" % (len(missing), missing), file=sys.stderr)
     print("Wrote %s — GW%d, %d gameweeks played" % (OUT, out["gameweek"], played))
     for p in people:
-        print("  %d. %-8s %2d goals (%+d vs %d)" % (p["rank"], p["name"], p["total"], -p["remaining"], picks["target"]))
+        print("  %d. %-8s %2d goals (%+d vs %d)   on pace for %s"
+              % (p["rank"], p["name"], p["total"], -p["remaining"], picks["target"], p["projected"]))
+    hurt = [(pl["name"], pl["status"], pl["news"])
+            for per in people for pl in per["players"] if pl["status"] != "a"]
+    for n, st, news in hurt:
+        print("  ! %-22s %s  %s" % (n, st, news))
 
 
 if __name__ == "__main__":
