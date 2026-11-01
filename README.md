@@ -15,8 +15,22 @@ the aim is for their combined 2026/27 league goals to total exactly **21**.
   show which games the goals came in; players still on nought are skipped, so the
   run costs one call plus one per scorer.
 - `index.html` — reads that file and draws the cards.
-- `.github/workflows/update.yml` — runs the script every **Sunday at 8pm UK time**
-  and commits the result, which republishes the page.
+- `.github/workflows/update.yml` — runs the script every **Sunday evening** and
+  commits the result, which republishes the page.
+
+### About the schedule
+
+The workflow asks for 19:00 and 20:00 UTC on Sundays, but GitHub's shared
+scheduler runs queued jobs late — observed delays here are 1-3.5 hours — so in
+practice it lands between about 8pm and 11pm UK. That is after the day's
+matches, which is what matters for the goal counts.
+
+Two slots are booked so one can be dropped without losing the week. The first
+to arrive does the work; the second sees that the data already carries today's
+date and stands down. `scripts/check_fresh.py` then runs on every attempt,
+including the ones that stand down, and fails the job if the published goals
+are more than 8 days old — so a stalled schedule shows up as a failed run
+rather than a quiet success.
 
 Tapping a player who has scored opens their goals by fixture — gameweek,
 opponent, and the final score. It uses `<details>`/`<summary>`, so it works with

@@ -2,8 +2,10 @@ name: Update goals
 
 on:
   schedule:
-    # 19:00 UTC covers 8pm London during BST, 20:00 UTC covers it during GMT.
-    # The guard step below lets exactly one of them through each Sunday.
+    # Sunday evening, after the day's matches have finished. GitHub's shared
+    # scheduler runs these 1-3 hours late, so they land roughly 8pm-11pm UK.
+    # Two slots cover both BST and GMT and give a second chance if one is
+    # dropped; whichever arrives first does the work and the other stands down.
     - cron: "0 19 * * 0"
     - cron: "0 20 * * 0"
   workflow_dispatch:
@@ -19,20 +21,20 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Only run at 8pm UK time
+      - uses: actions/checkout@v4
+
+      - name: Decide whether to run
         id: gate
         run: |
-          hour=$(TZ=Europe/London date +%H)
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$hour" = "20" ]; then
+          today=$(TZ=Europe/London date +%F)
+          last=$(python3 scripts/last_update.py)
+          echo "Today in London: $today — last update: $last"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$last" != "$today" ]; then
             echo "go=yes" >> "$GITHUB_OUTPUT"
-            echo "Running (London hour: $hour)"
           else
             echo "go=no" >> "$GITHUB_OUTPUT"
-            echo "Skipping — London hour is $hour, not 20."
+            echo "Already updated today, so this is the back-up slot standing down."
           fi
-
-      - uses: actions/checkout@v4
-        if: steps.gate.outputs.go == 'yes'
 
       - name: Fetch latest goals
         if: steps.gate.outputs.go == 'yes'
@@ -50,3 +52,8 @@ jobs:
             git commit -m "Update goals — $(TZ=Europe/London date '+%d %b %Y')"
             git push
           fi
+
+      # Runs even when the job stood down, so a stall can never look like success.
+      - name: Fail if the goals have gone stale
+        if: always()
+        run: python3 scripts/check_fresh.py

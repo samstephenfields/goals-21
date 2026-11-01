@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-22T13:56:33+00:00",
+  "generated": "2026-11-01T15:54:19+00:00",
   "season": "2026/27",
   "title": "Race to 21",
   "rules": "Pick four players whose total goals in the 2026-27 Premier League season add up to 21. Any four players, from any team — including four from the same team.",
   "target": 21,
-  "gameweek": 5,
-  "gameweeksPlayed": 5,
+  "gameweek": 9,
+  "gameweeksPlayed": 8,
   "source": "Premier League Fantasy API",
   "sourceUrl": "https://fantasy.premierleague.com/api/bootstrap-static/",
   "clubs": {
@@ -63,10 +63,30 @@
           "team": "Chelsea",
           "teamShort": "CHE",
           "position": "MID",
-          "goals": 3,
-          "minutes": 437,
+          "goals": 5,
+          "minutes": 790,
           "active": true,
           "games": [
+            {
+              "round": 9,
+              "opponent": "MUN",
+              "opponentName": "Man Utd",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 0,
+              "date": "2026-10-31"
+            },
+            {
+              "round": 6,
+              "opponent": "BOU",
+              "opponentName": "Bournemouth",
+              "home": true,
+              "goals": 1,
+              "for": 5,
+              "against": 1,
+              "date": "2026-10-10"
+            },
             {
               "round": 4,
               "opponent": "HUL",
@@ -100,13 +120,45 @@
           ]
         },
         {
+          "id": 106,
+          "name": "Igor Thiago",
+          "team": "Brentford",
+          "teamShort": "BRE",
+          "position": "FWD",
+          "goals": 2,
+          "minutes": 802,
+          "active": true,
+          "games": [
+            {
+              "round": 9,
+              "opponent": "NFO",
+              "opponentName": "Nott'm Forest",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 0,
+              "date": "2026-10-31"
+            },
+            {
+              "round": 5,
+              "opponent": "CHE",
+              "opponentName": "Chelsea",
+              "home": true,
+              "goals": 1,
+              "for": 3,
+              "against": 0,
+              "date": "2026-09-18"
+            }
+          ]
+        },
+        {
           "id": 26,
           "name": "Kai Havertz",
           "team": "Arsenal",
           "teamShort": "ARS",
           "position": "FWD",
           "goals": 2,
-          "minutes": 437,
+          "minutes": 586,
           "active": true,
           "games": [
             {
@@ -132,43 +184,129 @@
           ]
         },
         {
-          "id": 106,
-          "name": "Igor Thiago",
-          "team": "Brentford",
-          "teamShort": "BRE",
-          "position": "FWD",
-          "goals": 1,
-          "minutes": 442,
-          "active": true,
-          "games": [
-            {
-              "round": 5,
-              "opponent": "CHE",
-              "opponentName": "Chelsea",
-              "home": true,
-              "goals": 1,
-              "for": 3,
-              "against": 0,
-              "date": "2026-09-18"
-            }
-          ]
-        },
-        {
           "id": 356,
           "name": "Virgil van Dijk",
           "team": "Liverpool",
           "teamShort": "LIV",
           "position": "DEF",
           "goals": 0,
-          "minutes": 450,
+          "minutes": 720,
           "active": true,
           "games": []
         }
       ],
-      "total": 6,
-      "remaining": 15,
+      "total": 9,
+      "remaining": 12,
       "bust": false,
       "rank": 1
+    },
+    {
+      "name": "Sam",
+      "club": "bournemouth",
+      "clubName": "Bournemouth",
+      "clubNick": "The Cherries",
+      "players": [
+        {
+          "id": 79,
+          "name": "Evanilson",
+          "team": "Bournemouth",
+          "teamShort": "BOU",
+          "position": "FWD",
+          "goals": 4,
+          "minutes": 753,
+          "active": true,
+          "games": [
+            {
+              "round": 9,
+              "opponent": "LEE",
+              "opponentName": "Leeds",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 0,
+              "date": "2026-10-31"
+            },
+            {
+              "round": 8,
+              "opponent": "MUN",
+              "opponentName": "Man Utd",
+              "home": false,
+              "goals": 1,
+              "for": 3,
+              "against": 0,
+              "date": "2026-10-25"
+            },
+            {
+              "round": 7,
+              "opponent": "SUN",
+              "opponentName": "Sunderland",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 0,
+              "date": "2026-10-18"
+            },
+            {
+              "round": 6,
+              "opponent": "CHE",
+              "opponentName": "Chelsea",
+              "home": false,
+              "goals": 1,
+              "for": 1,
+              "against": 5,
+              "date": "2026-10-10"
+            }
+          ]
+        },
+        {
+          "id": 391,
+          "name": "Joško Gvardiol",
+          "team": "Man City",
+          "teamShort": "MCI",
+          "position": "DEF",
+          "goals": 1,
+          "minutes": 655,
+          "active": true,
+          "games": [
+            {
+              "round": 1,
+              "opponent": "BOU",
+              "opponentName": "Bournemouth",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 1,
+              "date": "2026-08-23"
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "name": "Mikel Merino",
+          "team": "Arsenal",
+          "teamShort": "ARS",
+          "position": "MID",
+          "goals": 0,
+          "minutes": 173,
+          "active": true,
+          "games": []
+        },
+        {
+          "id": 75,
+          "name": "Ryan Christie",
+          "team": "Bournemouth",
+          "teamShort": "BOU",
+          "position": "MID",
+          "goals": 0,
+          "minutes": 346,
+          "active": true,
+          "games": []
+        }
+      ],
+      "total": 5,
+      "remaining": 16,
+      "bust": false,
+      "rank": 2
     },
     {
       "name": "Keone",
@@ -182,10 +320,20 @@
           "team": "Leeds",
           "teamShort": "LEE",
           "position": "FWD",
-          "goals": 2,
-          "minutes": 419,
+          "goals": 3,
+          "minutes": 773,
           "active": true,
           "games": [
+            {
+              "round": 7,
+              "opponent": "MUN",
+              "opponentName": "Man Utd",
+              "home": true,
+              "goals": 1,
+              "for": 1,
+              "against": 1,
+              "date": "2026-10-18"
+            },
             {
               "round": 4,
               "opponent": "NEW",
@@ -215,7 +363,7 @@
           "teamShort": "LIV",
           "position": "MID",
           "goals": 1,
-          "minutes": 440,
+          "minutes": 471,
           "active": true,
           "games": [
             {
@@ -237,7 +385,7 @@
           "teamShort": "FUL",
           "position": "FWD",
           "goals": 1,
-          "minutes": 425,
+          "minutes": 754,
           "active": true,
           "games": [
             {
@@ -259,15 +407,15 @@
           "teamShort": "CRY",
           "position": "MID",
           "goals": 0,
-          "minutes": 8,
+          "minutes": 15,
           "active": true,
           "games": []
         }
       ],
-      "total": 4,
-      "remaining": 17,
+      "total": 5,
+      "remaining": 16,
       "bust": false,
-      "rank": 2
+      "rank": 3
     },
     {
       "name": "Max",
@@ -282,7 +430,7 @@
           "teamShort": "ARS",
           "position": "FWD",
           "goals": 2,
-          "minutes": 437,
+          "minutes": 586,
           "active": true,
           "games": [
             {
@@ -308,13 +456,35 @@
           ]
         },
         {
+          "id": 4,
+          "name": "Gabriel",
+          "team": "Arsenal",
+          "teamShort": "ARS",
+          "position": "DEF",
+          "goals": 1,
+          "minutes": 720,
+          "active": true,
+          "games": [
+            {
+              "round": 8,
+              "opponent": "EVE",
+              "opponentName": "Everton",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 0,
+              "date": "2026-10-24"
+            }
+          ]
+        },
+        {
           "id": 368,
           "name": "Dominik Szoboszlai",
           "team": "Liverpool",
           "teamShort": "LIV",
           "position": "MID",
           "goals": 1,
-          "minutes": 440,
+          "minutes": 471,
           "active": true,
           "games": [
             {
@@ -336,26 +506,15 @@
           "teamShort": "LIV",
           "position": "DEF",
           "goals": 0,
-          "minutes": 450,
-          "active": true,
-          "games": []
-        },
-        {
-          "id": 4,
-          "name": "Gabriel",
-          "team": "Arsenal",
-          "teamShort": "ARS",
-          "position": "DEF",
-          "goals": 0,
-          "minutes": 450,
+          "minutes": 720,
           "active": true,
           "games": []
         }
       ],
-      "total": 3,
-      "remaining": 18,
+      "total": 4,
+      "remaining": 17,
       "bust": false,
-      "rank": 3
+      "rank": 4
     },
     {
       "name": "Yuseph",
@@ -364,13 +523,35 @@
       "clubNick": "Red Devils",
       "players": [
         {
+          "id": 8,
+          "name": "Riccardo Calafiori",
+          "team": "Arsenal",
+          "teamShort": "ARS",
+          "position": "DEF",
+          "goals": 1,
+          "minutes": 609,
+          "active": true,
+          "games": [
+            {
+              "round": 6,
+              "opponent": "LEE",
+              "opponentName": "Leeds",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 1,
+              "date": "2026-10-10"
+            }
+          ]
+        },
+        {
           "id": 155,
           "name": "Enzo Fernández",
           "team": "Man City",
           "teamShort": "MCI",
           "position": "MID",
           "goals": 1,
-          "minutes": 271,
+          "minutes": 543,
           "active": true,
           "games": [
             {
@@ -392,7 +573,7 @@
           "teamShort": "MCI",
           "position": "DEF",
           "goals": 1,
-          "minutes": 450,
+          "minutes": 675,
           "active": true,
           "games": [
             {
@@ -414,18 +595,85 @@
           "teamShort": "LIV",
           "position": "MID",
           "goals": 0,
-          "minutes": 402,
+          "minutes": 621,
+          "active": true,
+          "games": []
+        }
+      ],
+      "total": 3,
+      "remaining": 18,
+      "bust": false,
+      "rank": 5
+    },
+    {
+      "name": "Jack",
+      "club": "arsenal",
+      "clubName": "Arsenal",
+      "clubNick": "The Gunners",
+      "players": [
+        {
+          "id": 4,
+          "name": "Gabriel",
+          "team": "Arsenal",
+          "teamShort": "ARS",
+          "position": "DEF",
+          "goals": 1,
+          "minutes": 720,
+          "active": true,
+          "games": [
+            {
+              "round": 8,
+              "opponent": "EVE",
+              "opponentName": "Everton",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 0,
+              "date": "2026-10-24"
+            }
+          ]
+        },
+        {
+          "id": 400,
+          "name": "Jeremy Doku",
+          "team": "Man City",
+          "teamShort": "MCI",
+          "position": "MID",
+          "goals": 1,
+          "minutes": 305,
+          "active": true,
+          "games": [
+            {
+              "round": 6,
+              "opponent": "LIV",
+              "opponentName": "Liverpool",
+              "home": false,
+              "goals": 1,
+              "for": 3,
+              "against": 0,
+              "date": "2026-10-11"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "Declan Rice",
+          "team": "Arsenal",
+          "teamShort": "ARS",
+          "position": "MID",
+          "goals": 0,
+          "minutes": 670,
           "active": true,
           "games": []
         },
         {
-          "id": 8,
-          "name": "Riccardo Calafiori",
-          "team": "Arsenal",
-          "teamShort": "ARS",
+          "id": 418,
+          "name": "Harry Maguire",
+          "team": "Man Utd",
+          "teamShort": "MUN",
           "position": "DEF",
           "goals": 0,
-          "minutes": 416,
+          "minutes": 810,
           "active": true,
           "games": []
         }
@@ -433,74 +681,7 @@
       "total": 2,
       "remaining": 19,
       "bust": false,
-      "rank": 4
-    },
-    {
-      "name": "Sam",
-      "club": "bournemouth",
-      "clubName": "Bournemouth",
-      "clubNick": "The Cherries",
-      "players": [
-        {
-          "id": 391,
-          "name": "Joško Gvardiol",
-          "team": "Man City",
-          "teamShort": "MCI",
-          "position": "DEF",
-          "goals": 1,
-          "minutes": 434,
-          "active": true,
-          "games": [
-            {
-              "round": 1,
-              "opponent": "BOU",
-              "opponentName": "Bournemouth",
-              "home": true,
-              "goals": 1,
-              "for": 2,
-              "against": 1,
-              "date": "2026-08-23"
-            }
-          ]
-        },
-        {
-          "id": 79,
-          "name": "Evanilson",
-          "team": "Bournemouth",
-          "teamShort": "BOU",
-          "position": "FWD",
-          "goals": 0,
-          "minutes": 424,
-          "active": true,
-          "games": []
-        },
-        {
-          "id": 17,
-          "name": "Mikel Merino",
-          "team": "Arsenal",
-          "teamShort": "ARS",
-          "position": "MID",
-          "goals": 0,
-          "minutes": 81,
-          "active": true,
-          "games": []
-        },
-        {
-          "id": 75,
-          "name": "Ryan Christie",
-          "team": "Bournemouth",
-          "teamShort": "BOU",
-          "position": "MID",
-          "goals": 0,
-          "minutes": 102,
-          "active": true,
-          "games": []
-        }
-      ],
-      "total": 1,
-      "remaining": 20,
-      "bust": false,
-      "rank": 5
+      "rank": 6
     },
     {
       "name": "Yunus",
@@ -515,7 +696,7 @@
           "teamShort": "NFO",
           "position": "MID",
           "goals": 1,
-          "minutes": 450,
+          "minutes": 720,
           "active": true,
           "games": [
             {
@@ -531,13 +712,35 @@
           ]
         },
         {
+          "id": 4,
+          "name": "Gabriel",
+          "team": "Arsenal",
+          "teamShort": "ARS",
+          "position": "DEF",
+          "goals": 1,
+          "minutes": 720,
+          "active": true,
+          "games": [
+            {
+              "round": 8,
+              "opponent": "EVE",
+              "opponentName": "Everton",
+              "home": true,
+              "goals": 1,
+              "for": 2,
+              "against": 0,
+              "date": "2026-10-24"
+            }
+          ]
+        },
+        {
           "id": 387,
           "name": "Nico O'Reilly",
           "team": "Man City",
           "teamShort": "MCI",
           "position": "DEF",
           "goals": 0,
-          "minutes": 163,
+          "minutes": 314,
           "active": true,
           "games": []
         },
@@ -548,80 +751,13 @@
           "teamShort": "LIV",
           "position": "DEF",
           "goals": 0,
-          "minutes": 450,
-          "active": true,
-          "games": []
-        },
-        {
-          "id": 4,
-          "name": "Gabriel",
-          "team": "Arsenal",
-          "teamShort": "ARS",
-          "position": "DEF",
-          "goals": 0,
-          "minutes": 450,
+          "minutes": 720,
           "active": true,
           "games": []
         }
       ],
-      "total": 1,
-      "remaining": 20,
-      "bust": false,
-      "rank": 6
-    },
-    {
-      "name": "Jack",
-      "club": "arsenal",
-      "clubName": "Arsenal",
-      "clubNick": "The Gunners",
-      "players": [
-        {
-          "id": 4,
-          "name": "Gabriel",
-          "team": "Arsenal",
-          "teamShort": "ARS",
-          "position": "DEF",
-          "goals": 0,
-          "minutes": 450,
-          "active": true,
-          "games": []
-        },
-        {
-          "id": 13,
-          "name": "Declan Rice",
-          "team": "Arsenal",
-          "teamShort": "ARS",
-          "position": "MID",
-          "goals": 0,
-          "minutes": 411,
-          "active": true,
-          "games": []
-        },
-        {
-          "id": 418,
-          "name": "Harry Maguire",
-          "team": "Man Utd",
-          "teamShort": "MUN",
-          "position": "DEF",
-          "goals": 0,
-          "minutes": 450,
-          "active": true,
-          "games": []
-        },
-        {
-          "id": 400,
-          "name": "Jeremy Doku",
-          "team": "Man City",
-          "teamShort": "MCI",
-          "position": "MID",
-          "goals": 0,
-          "minutes": 15,
-          "active": true,
-          "games": []
-        }
-      ],
-      "total": 0,
-      "remaining": 21,
+      "total": 2,
+      "remaining": 19,
       "bust": false,
       "rank": 7
     }
