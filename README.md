@@ -1,7 +1,9 @@
 # Race to 21
 
 A scoreboard for a Premier League sweepstake: everyone picks four players, and
-the aim is for their combined 2026/27 league goals to total exactly **21**.
+whoever's combined 2026/27 league goals finish **closest to 21 without going
+over** wins. Goals only accumulate, so passing 21 is terminal — the table sorts
+anyone bust below everyone still in it.
 
 **Live page:** https://samstephenfields.github.io/goals-21/
 
@@ -41,8 +43,9 @@ extra scripting. Team news from the feed shows as an INJ, DOUBT or SUSP flag on
 the player's row.
 
 **Now / On pace** switches the table between goals scored and a naive
-extrapolation over all 38 gameweeks. It reorders the board, because leading on
-goals and being on course for exactly 21 are very different things.
+extrapolation over all 38 gameweeks. Both views rank by the same rule — nearest
+to 21 from below, bust last — so the pace view can show someone leading on goals
+sitting bottom, because their pace takes them past the line.
 
 **The season chart** plots each person's cumulative goals gameweek by gameweek
 against the target line. The curves are rebuilt from the per-match data on every

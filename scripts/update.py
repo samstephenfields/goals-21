@@ -191,8 +191,13 @@ def main():
             "bust": total > picks["target"],
         })
 
-    # Closest to the target first; if level, fewer goals leads (still climbing).
-    people.sort(key=lambda p: (abs(p["remaining"]), p["total"]))
+    # Closest to the target without passing it. Going over is terminal -- goals
+    # only accumulate -- so anyone bust sorts below everyone still in it.
+    def standing(total):
+        over = total > picks["target"]
+        return (1 if over else 0, total if over else -total)
+
+    people.sort(key=lambda p: standing(p["total"]))
     for i, p in enumerate(people):
         p["rank"] = i + 1
 
@@ -208,6 +213,7 @@ def main():
         "totalGameweeks": len(data["events"]),
         "source": "Premier League Fantasy API",
         "sourceUrl": API,
+        "xgSourceUrl": PLAYER_API % 40,
         "clubs": picks["clubs"],
         "people": people,
     }

@@ -1,6 +1,6 @@
 {
   "title": "Race to 21",
-  "rules": "Pick four players whose total goals in the 2026-27 Premier League season add up to 21. Any four players, from any team — including four from the same team.",
+  "rules": "Pick four players from any club. Whoever's combined 2026-27 Premier League goals finish closest to 21 without going over wins. Goals only accumulate, so passing 21 puts you out for good.",
   "target": 21,
   "season": "2026/27",
   "people": [

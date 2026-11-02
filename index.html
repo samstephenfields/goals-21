@@ -9,7 +9,7 @@
 <meta name="description" content="Four players. Twenty-one goals. The 2026/27 Premier League sweepstake.">
 <!-- og:start --><!-- rewritten by scripts/make_og.py; edit there, not here -->
 <meta property="og:title" content="Race to 21">
-<meta property="og:description" content="Gameweek 8 — Alexi leads on 9, on pace for 43. Four players each, target 21.">
+<meta property="og:description" content="Gameweek 8 — Alexi leads on 10, on pace for 48. Four players each, target 21.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://samstephenfields.github.io/goals-21/">
 <meta property="og:image" content="https://samstephenfields.github.io/goals-21/og.png?gw=9">
@@ -263,7 +263,7 @@
   <header>
     <div class="kicker">⚽ Premier League <span id="season">2026/27</span></div>
     <h1>Race to 21</h1>
-    <p class="sub">Four players each. First to land <b>exactly 21</b> goals takes it.</p>
+    <p class="sub">Four players each. Closest to <b>21</b> at the end of the season wins — go over and you’re out for good.</p>
     <div class="meta" id="meta"></div>
   </header>
   <div class="views" role="group" aria-label="Table view">
@@ -274,7 +274,7 @@
   <main id="app"><div class="state">Loading the latest goals…</div></main>
   <section id="chart" class="chart" hidden></section>
   <footer>
-    Goals from the official <a id="feed" href="https://fantasy.premierleague.com/api/bootstrap-static/" target="_blank" rel="noopener">Premier League data feed</a> · own goals not counted<br>
+    Goals and <a id="xgfeed" href="https://fantasy.premierleague.com/api/element-summary/40/" target="_blank" rel="noopener" title="Expected goals, match by match, from each player’s record in the same feed">xG</a> from the official <a id="feed" href="https://fantasy.premierleague.com/api/bootstrap-static/" target="_blank" rel="noopener">Premier League data feed</a> · own goals not counted<br>
     Browse the <a href="https://www.premierleague.com/stats/top/players/goals" target="_blank" rel="noopener">full Premier League scorer list</a><br>
     Updates automatically every Sunday evening, once the day’s matches are done
   </footer>
@@ -487,6 +487,7 @@ function render(d) {
   DATA = d;
   document.getElementById('season').textContent = d.season;
   if (d.sourceUrl) document.getElementById('feed').href = d.sourceUrl;
+  if (d.xgSourceUrl) document.getElementById('xgfeed').href = d.xgSourceUrl;
 
   const when = new Date(d.generated).toLocaleString('en-GB', {
     day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London'
@@ -517,9 +518,14 @@ function luck(goals, xg) {
 
 function paint(d) {
   const pace = VIEW === 'pace';
+  // Same rule as the server uses for the live table: nearest to the target from
+  // below, with anyone past it sorted out of contention.
+  const standing = v => [v > d.target ? 1 : 0, v > d.target ? v : -v];
   const people = pace
-    ? [...d.people].sort((a, b) =>
-        Math.abs(a.projectedRemaining) - Math.abs(b.projectedRemaining) || a.projected - b.projected)
+    ? [...d.people].sort((a, b) => {
+        const [ab, av] = standing(a.projected ?? 0), [bb, bv] = standing(b.projected ?? 0);
+        return ab - bb || av - bv;
+      })
     : d.people;
 
   document.getElementById('paceNote').textContent = pace
@@ -534,7 +540,7 @@ function paint(d) {
     const lead  = rank === 1 && value > 0 && !bust;
     const pct   = Math.min(100, (value / d.target) * 100);
 
-    const togo = bust ? `<b>${value - d.target}</b> over the line`
+    const togo = bust ? `<b>${value - d.target}</b> over — no way back`
                : hit ? 'On the number 🎯'
                : `<b>${d.target - value}</b> to go`;
 
