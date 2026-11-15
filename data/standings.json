@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-08T22:38:46+00:00",
+  "generated": "2026-11-15T23:18:45+00:00",
   "season": "2026/27",
   "title": "Race to 21",
   "rules": "Pick four players from any club. Whoever's combined 2026-27 Premier League goals finish closest to 21 without going over wins. Goals only accumulate, so passing 21 puts you out for good.",
   "target": 21,
   "gameweek": 10,
-  "gameweeksPlayed": 9,
+  "gameweeksPlayed": 10,
   "lastGameweek": 10,
   "totalGameweeks": 38,
   "source": "Premier League Fantasy API",
@@ -69,8 +69,8 @@
         10,
         10
       ],
-      "projected": 42,
-      "projectedRemaining": -21,
+      "projected": 38,
+      "projectedRemaining": -17,
       "xg": 10.36,
       "club": "arsenal",
       "clubName": "Arsenal",
@@ -244,9 +244,9 @@
           "minutes": 900,
           "active": true,
           "xg": 0.42,
-          "status": "a",
-          "news": "",
-          "chance": null,
+          "status": "d",
+          "news": "Unspecified injury - 75% chance of playing",
+          "chance": 75,
           "games": []
         }
       ],
@@ -270,8 +270,8 @@
         5,
         6
       ],
-      "projected": 25,
-      "projectedRemaining": -4,
+      "projected": 23,
+      "projectedRemaining": -2,
       "xg": 7.1,
       "club": "bournemouth",
       "clubName": "Bournemouth",
@@ -426,8 +426,8 @@
         5,
         5
       ],
-      "projected": 21,
-      "projectedRemaining": 0,
+      "projected": 19,
+      "projectedRemaining": 2,
       "xg": 9.84,
       "club": "liverpool",
       "clubName": "Liverpool",
@@ -572,8 +572,8 @@
         5,
         5
       ],
-      "projected": 21,
-      "projectedRemaining": 0,
+      "projected": 19,
+      "projectedRemaining": 2,
       "xg": 6.21,
       "club": "liverpool",
       "clubName": "Liverpool",
@@ -692,9 +692,9 @@
           "minutes": 900,
           "active": true,
           "xg": 0.42,
-          "status": "a",
-          "news": "",
-          "chance": null,
+          "status": "d",
+          "news": "Unspecified injury - 75% chance of playing",
+          "chance": 75,
           "games": []
         }
       ],
@@ -718,8 +718,8 @@
         3,
         4
       ],
-      "projected": 17,
-      "projectedRemaining": 4,
+      "projected": 15,
+      "projectedRemaining": 6,
       "xg": 5.56,
       "club": "manutd",
       "clubName": "Man United",
@@ -940,9 +940,9 @@
           "minutes": 855,
           "active": true,
           "xg": 0.32,
-          "status": "a",
-          "news": "",
-          "chance": null,
+          "status": "d",
+          "news": "Back injury - 75% chance of playing",
+          "chance": 75,
           "games": []
         }
       ],
@@ -1052,9 +1052,9 @@
           "minutes": 900,
           "active": true,
           "xg": 0.42,
-          "status": "a",
-          "news": "",
-          "chance": null,
+          "status": "d",
+          "news": "Unspecified injury - 75% chance of playing",
+          "chance": 75,
           "games": []
         }
       ],
